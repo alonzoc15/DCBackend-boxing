@@ -4,12 +4,12 @@ const express = require('express'),
 
 /* GET home page. */
 router.get('/', async(req, res, next) => {
-const trackList = await BoxersModel.getAll();
+const boxerList = await BoxersModel.getAll();
 
 res.render('template', {
     locals: {
         title: 'Lets Get Ready to Rumble!',
-        trackData: trackList,
+        boxerData: boxerList,
         isLoggedIn: req.session.is_logged_in,
         userName: req.session.first_name
     },
@@ -20,13 +20,13 @@ res.render('template', {
 });
 
 router.get('/:boxer_id', async(req, res, next) => {
-const { track_id } = req.params;
-const theBoxer = await BoxersModel.getById(track_id);
+const { boxer_id } = req.params;
+const theBoxer = await BoxersModel.getById(boxer_id);
 
 res.render('template', {
     locals: {
         title: 'This is one Boxer',
-        trackData: theTrack
+        boxerData: theBoxer
     },
     partials: {
         partial: 'partial-single-Boxer'
