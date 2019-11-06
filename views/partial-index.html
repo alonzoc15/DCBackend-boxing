@@ -1,0 +1,9 @@
+<section class="section">
+    <ul class="level">
+        ${boxerData.map(boxer => `
+        <li style="width: 100%">
+            <a href='./${boxer.id}'>${boxer.name}</a>
+        </li>
+        `).join('')}
+    </ul>
+</section>
