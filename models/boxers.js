@@ -36,4 +36,4 @@ class Boxer {
     }
 }
 
-module.exports = Track;
+module.exports = Boxer;

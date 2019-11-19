@@ -6,7 +6,7 @@ const pgp = require('pg-promise')({
 
 const options = {
     host: 'localhost',
-    database: 'race_tracks'
+    database: 'boxing_noapi'
 }
 
 const db = pgp(options);
